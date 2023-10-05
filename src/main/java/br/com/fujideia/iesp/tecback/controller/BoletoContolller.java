@@ -1,7 +1,6 @@
 package br.com.fujideia.iesp.tecback.controller;
 
 import br.com.fujideia.iesp.tecback.model.Boleto;
-import br.com.fujideia.iesp.tecback.model.Cartao;
 import br.com.fujideia.iesp.tecback.service.BoletoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

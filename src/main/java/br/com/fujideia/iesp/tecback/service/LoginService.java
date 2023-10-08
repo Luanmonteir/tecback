@@ -1,6 +1,5 @@
 package br.com.fujideia.iesp.tecback.service;
 
-import br.com.fujideia.iesp.tecback.model.Cartao;
 import br.com.fujideia.iesp.tecback.model.Login;
 import br.com.fujideia.iesp.tecback.repository.LoginRepository;
 import org.springframework.beans.factory.annotation.Autowired;

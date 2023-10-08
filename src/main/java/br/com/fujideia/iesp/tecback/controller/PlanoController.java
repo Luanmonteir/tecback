@@ -1,6 +1,5 @@
 package br.com.fujideia.iesp.tecback.controller;
 
-import br.com.fujideia.iesp.tecback.model.Boleto;
 import br.com.fujideia.iesp.tecback.model.Plano;
 import br.com.fujideia.iesp.tecback.service.PlanoService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -7,10 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Cartao {
-    private Integer id;
-    private String nomeCartao;
-    private Integer numcartao;
-    private Integer valiCartao;
+public class Endereco {
 
+
+    private Integer id;
+    private String pais;
+    private String estado;
+    private String cidade;
+    private String rua;
 }

@@ -7,14 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Boleto {
+public class Localizacao {
 
 
     private Integer id;
-
-    private String cod_barra;
-
-    private String vencimento;
-    private String nomeUsuario;
+    private String pais;
+    private String estado;
+    private String cidade;
+    private String rua;
 }
-

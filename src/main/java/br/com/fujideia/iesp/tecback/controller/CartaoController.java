@@ -2,6 +2,7 @@ package br.com.fujideia.iesp.tecback.controller;
 
 import br.com.fujideia.iesp.tecback.model.Cartao;
 import br.com.fujideia.iesp.tecback.service.CartaoService;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class CartaoController {
         return ResponseEntity.ok(cartao);
     }
     @PutMapping
-    public ResponseEntity<Cartao> alterar(@RequestBody  Cartao cartao){
+    public ResponseEntity<Cartao> alterar(@RequestBody  Cartao cartao) throws NotFoundException {
         cartao = service.alterar(cartao);
         return ResponseEntity.ok(cartao);
     }

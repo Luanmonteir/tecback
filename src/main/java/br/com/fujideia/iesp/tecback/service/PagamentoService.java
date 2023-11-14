@@ -2,6 +2,7 @@ package br.com.fujideia.iesp.tecback.service;
 
 import br.com.fujideia.iesp.tecback.model.Pagamento;
 import br.com.fujideia.iesp.tecback.repository.PagamentoRepository;
+import jakarta.ws.rs.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,10 @@ public class PagamentoService {
     }
 
     public Pagamento alterar(Pagamento pagamento) {
-        return pagamento;
+        if (repository.existsById(pagamento.getId())) {
+            return repository.save(pagamento);
+        } else {
+            throw new NotFoundException();
+        }
     }
 }

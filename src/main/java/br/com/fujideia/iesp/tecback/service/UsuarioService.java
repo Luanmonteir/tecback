@@ -2,6 +2,7 @@ package br.com.fujideia.iesp.tecback.service;
 
 import br.com.fujideia.iesp.tecback.model.Usuario;
 import br.com.fujideia.iesp.tecback.repository.UsuarioRepository;
+import jakarta.ws.rs.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,13 @@ public class UsuarioService {
         return repository.save(usuario);
     }
     public Usuario alterar(Usuario usuario) {
-        return usuario;
+
+        if (repository.existsById(usuario.getId())) {
+
+            return repository.save(usuario);
+        }
+        else{
+            throw new NotFoundException();
+        }
     }
 }

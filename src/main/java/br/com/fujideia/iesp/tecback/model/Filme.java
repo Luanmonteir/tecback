@@ -3,7 +3,6 @@
     import jakarta.persistence.*;
     import lombok.Getter;
     import lombok.Setter;
-    
     import java.io.Serializable;
     
     @Getter
@@ -21,7 +20,7 @@
         private String sinopse;
     
         private Integer ano;
-    
+
         @ManyToOne
         private Genero genero;
     

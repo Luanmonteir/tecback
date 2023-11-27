@@ -4,9 +4,10 @@ package br.com.fujideia.iesp.tecback.controller;
 import br.com.fujideia.iesp.tecback.exception.CustomException;
 import br.com.fujideia.iesp.tecback.model.Localizacao;
 import br.com.fujideia.iesp.tecback.model.Usuario;
+import br.com.fujideia.iesp.tecback.model.dto.NomeDTO;
 import br.com.fujideia.iesp.tecback.model.dto.NordesteDTO;
 import br.com.fujideia.iesp.tecback.model.dto.ValidatorDTO;
-import br.com.fujideia.iesp.tecback.validator.EstadoNordeste;
+
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,11 +46,21 @@ public class ValidatorController {
 
         return validatorDTO;
     }
-    public String estado (@Valid Localizacao localizacao){
-        return localizacao.getEstado();
+    @GetMapping("/estado")
+    public NordesteDTO nullException (@Valid NordesteDTO nordesteDTO){
+
+        nordesteDTO =null;
+        nordesteDTO.getEstado();
+
+        return nordesteDTO;
     }
 
-   // public String nome(@Valid Usuario usuario){
-    //    return usuario.getNome();
-    //}
+    @GetMapping("/nome")
+      public NomeDTO nullException(@Valid NomeDTO nomeDTO){
+
+            nomeDTO = null;
+            nomeDTO.getNome();
+
+            return nomeDTO;
+    }
 }

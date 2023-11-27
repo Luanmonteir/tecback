@@ -2,6 +2,7 @@ package br.com.fujideia.iesp.tecback.controller;
 
 
 
+import br.com.fujideia.iesp.tecback.model.Plano;
 import br.com.fujideia.iesp.tecback.model.Usuario;
 import br.com.fujideia.iesp.tecback.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +32,18 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario> consultarPorId(@PathVariable int id){
+    public ResponseEntity<Plano> consultarPorId(@PathVariable int id){
         return ResponseEntity.ok(service.consultarPorId(id));
     }
 
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> excluir(@PathVariable("id") Integer id){
+        if(service.excluir(id)){
+            return ResponseEntity.ok().build();
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+    }
     @GetMapping("consulta/cep/{cep}")
     public String teste(@PathVariable String cep){
         return client.consultaCep(cep);

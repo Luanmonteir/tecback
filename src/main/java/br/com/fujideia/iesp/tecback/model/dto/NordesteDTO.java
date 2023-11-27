@@ -6,8 +6,6 @@ import lombok.Data;
 
 @Data
 public class NordesteDTO {
-    private String nome;
-
     @EstadoNordeste
     private String estado;
 }

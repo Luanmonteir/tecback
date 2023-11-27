@@ -46,6 +46,7 @@ public class UsuarioController {
     }
     @GetMapping("consulta/cep/{cep}")
     public String teste(@PathVariable String cep){
+
         return client.consultaCep(cep);
     }
 

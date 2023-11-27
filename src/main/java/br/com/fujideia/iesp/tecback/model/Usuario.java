@@ -1,6 +1,5 @@
 package br.com.fujideia.iesp.tecback.model;
 
-import br.com.fujideia.iesp.tecback.validator.Nome;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -16,7 +15,7 @@ public class Usuario {
     @Id
     @GeneratedValue
     private Integer id;
-    @Nome
+
     @NotBlank(message = "O campo 'nome' não pode estar em branco.")
     private String nome;
 
